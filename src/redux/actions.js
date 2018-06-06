@@ -1,13 +1,13 @@
-export const PROCESSING = 'PROCESSING';
-export const STOP = 'STOP';
+export const SPEED_UP = 'SPEED_UP';
+export const SLOW_DOWN = 'SLOW_DOWN';
 
-export const processing = () => {
+export const speedUp = () => {
 	return {
-		type: PROCESSING
+		type: SPEED_UP
 	};
 };
-export const stop = () => {
+export const slowDown = () => {
 	return {
-		type: STOP
+		type: SLOW_DOWN
 	};
 };

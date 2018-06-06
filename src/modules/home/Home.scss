@@ -10,5 +10,15 @@
     transform: translate(-50%, -50%);
     font-size: 6em;
     font-weight: bold;
+    text-align: center;
+  }
+  .resources-buttons {
+    button {
+      text-transform: uppercase;
+      font-weight: bold;
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
   }
 }

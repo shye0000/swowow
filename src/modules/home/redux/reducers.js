@@ -10,7 +10,8 @@ const reducers = (state = [], action) => {
 		case ROOT_FETCH_SUCCESS: {
 			return {
 				fetching: false,
-				fetchSuccess: true
+				fetchSuccess: true,
+				root: action.root
 			};
 		}
 		case ROOT_FETCH_FAIL: {

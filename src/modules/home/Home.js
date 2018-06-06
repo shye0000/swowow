@@ -1,7 +1,9 @@
 import React from 'react';
 import {fetchRoot} from './redux/actions';
 import {connect} from 'react-redux';
-import {processing, stop} from '../../redux/actions';
+import {speedUp, slowDown} from '../../redux/actions';
+import ResourcesButtons from './components/ResourcesButtons';
+import Animate from 'rc-animate';
 import './Home.scss';
 
 const Msg = ({fetching, fetchSuccess, counter}) => {
@@ -9,12 +11,27 @@ const Msg = ({fetching, fetchSuccess, counter}) => {
 		return null;
 	}
 	if (fetching) {
-		return <div>Here we go!</div>;
+		return <Animate
+			transitionName="fade"
+			transitionAppear
+		>
+			<div>Here we go!</div>
+		</Animate>;
 	}
 	if (fetchSuccess) {
-		return <div>OK</div>;
+		return <Animate
+			transitionName="fade"
+			transitionAppear
+		>
+			<div>Star Wars</div>
+		</Animate>;
 	}
-	return <div>Bad luck, something went wrong...</div>;
+	return <Animate
+		transitionName="fade"
+		transitionAppear
+	>
+		<div>Bad luck, something went wrong...</div>
+	</Animate>;
 };
 
 class HomePage extends React.Component {
@@ -41,12 +58,13 @@ class HomePage extends React.Component {
 
 	render() {
 		const {counter} = this.state;
-		const {fetching, fetchSuccess} = this.props;
+		const {fetching, fetchSuccess, root} = this.props;
 		return (
 			<div className="home">
 				{counter ? <div className="home-counter">{counter}</div> : null}
 				<div className="home-msg">
 					<Msg fetching={fetching} fetchSuccess={fetchSuccess} counter={counter} />
+					{fetchSuccess ? <ResourcesButtons root={root} /> : null}
 				</div>
 			</div>
 		);
@@ -56,20 +74,21 @@ class HomePage extends React.Component {
 const mapStateToProps = (state) => {
 	return {
 		fetching: state.root.fetching,
-		fetchSuccess: state.root.fetchSuccess
+		fetchSuccess: state.root.fetchSuccess,
+		root: state.root.root
 	};
 };
 
 const mapDispatchToProps = (dispatch) => {
 	return {
 		fetchRoot: () => {
-			dispatch(processing());
+			dispatch(speedUp());
 			dispatch(fetchRoot()).then(
 				() => {
-					dispatch(stop());
+					// setTimeout(() => dispatch(stop()), 3000);
 				},
 				() => {
-					dispatch(stop());
+					// setTimeout(() => dispatch(stop()), 3000);
 				}
 			);
 		}

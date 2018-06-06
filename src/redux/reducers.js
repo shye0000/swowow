@@ -1,16 +1,16 @@
 import {routerReducer} from 'react-router-redux';
-import {PROCESSING, STOP} from './actions';
+import {SPEED_UP, SLOW_DOWN} from './actions';
 
 const globalReducers = (state = [], action) => {
 	switch (action.type) {
-		case PROCESSING: {
+		case SPEED_UP: {
 			return {
-				processing: true
+				speedUp: true
 			};
 		}
-		case STOP: {
+		case SLOW_DOWN: {
 			return {
-				processing: false
+				speedUp: false
 			};
 		}
 		default: {

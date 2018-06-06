@@ -8,8 +8,8 @@ import './Layout.scss';
 class Layout extends React.Component {
 
 	componentDidUpdate () {
-		const {processing} = this.props;
-		if (processing) {
+		const {speedUp} = this.props;
+		if (speedUp) {
 			this.field.speedUp();
 		} else {
 			this.field.slowDown();
@@ -29,7 +29,7 @@ class Layout extends React.Component {
 
 const mapStateToProps = (state) => {
 	return {
-		processing: state.global.processing,
+		speedUp: state.global.speedUp,
 	};
 };
 

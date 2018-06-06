@@ -5,12 +5,13 @@ export const ROOT_FETCH_FAIL = 'ROOT_FETCH_FAIL';
 export const fetchRoot = () => {
 	return (dispatch) => {
 		dispatch(rootFetching());
-		return fetch('https://swapi.co/api/').then(root => {
-			dispatch(rootFetchSuccess());
-		}).catch(error => {
-			dispatch(rootFetchFail());
-			throw(error);
-		});
+		return fetch('https://swapi.co/api/')
+			.then(resp => resp.json())
+			.then((root) => dispatch(rootFetchSuccess(root)))
+			.catch(error => {
+				dispatch(rootFetchFail());
+				throw(error);
+			});
 	};
 };
 
@@ -19,9 +20,10 @@ const rootFetching = () => {
 		type: ROOT_FETCHING
 	};
 };
-const rootFetchSuccess = () => {
+const rootFetchSuccess = (root) => {
 	return {
-		type: ROOT_FETCH_SUCCESS
+		type: ROOT_FETCH_SUCCESS,
+		root
 	};
 };
 const rootFetchFail = () => {
