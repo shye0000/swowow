@@ -1,10 +1,4 @@
-import asyncRoute from '../../utils/CodeSplitting/asyncRoute/asyncRoute';
-
-const NotFoundPage = asyncRoute(
-	() => import(
-		/* webpackChunkName: "notFoundPage" */
-		'./NotFoundPage')
-);
+import NotFoundPage from './NotFoundPage';
 
 export const routes = [{
 	path: '/*',

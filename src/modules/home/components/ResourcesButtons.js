@@ -4,6 +4,14 @@ import Animate from 'rc-animate';
 
 const supportedResources = ['planets'];
 
+const getResourceHref = (resource) => {
+	switch (resource) {
+		case 'planets': {
+			return '/#/planets';
+		}
+	}
+};
+
 const ResourcesButtons = ({root}) => {
 	return <div className="resources-buttons">
 		<Animate
@@ -14,10 +22,10 @@ const ResourcesButtons = ({root}) => {
 				return <Button
 					disabled={!supportedResources.includes(resource)}
 					key={resource}
+					href={getResourceHref(resource)}
 				>{resource}</Button>;
 			})}
 		</Animate>
-
 	</div>;
 };
 
