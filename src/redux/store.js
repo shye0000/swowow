@@ -1,7 +1,7 @@
 import {createStore as _createStore, applyMiddleware} from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import {routerMiddleware} from 'react-router-redux';
-import createBrowserHistory from 'history/createBrowserHistory';
+import createHashHistory from 'history/createHashHistory';
 import appReducers from './reducers';
 import Registry from '../utils/CodeSplitting/store/registry/registry';
 import registryMiddleware from '../utils/CodeSplitting/store/registry/middleware';
@@ -38,7 +38,7 @@ const preloadedState = window.__PRELOADED_STATE__;
 delete window.__PRELOADED_STATE__;
 
 // create the redux router middleware
-const history = createBrowserHistory();
+const history = createHashHistory();
 
 const appStore = createStore(history, preloadedState);
 export default appStore;

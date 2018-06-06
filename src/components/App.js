@@ -1,5 +1,4 @@
 import React from 'react';
-import {Switch} from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import {Provider} from 'react-redux';
 import {ConnectedRouter} from 'react-router-redux';
@@ -14,17 +13,13 @@ class App extends React.Component {
 	render() {
 		const supportsHistory = typeof window !== 'undefined' && 'pushState' in window.history;
 		return (
-			<div className="app">
-				<LocaleProvider locale={antI18n}>
-					<Provider store={this.props.store}>
-						<ConnectedRouter history={this.props.history} forceRefresh={!supportsHistory}>
-							<Switch>
-								{renderRoutes(this.props.routes)}
-							</Switch>
-						</ConnectedRouter>
-					</Provider>
-				</LocaleProvider>
-			</div>
+			<LocaleProvider locale={antI18n}>
+				<Provider store={this.props.store}>
+					<ConnectedRouter history={this.props.history} forceRefresh={!supportsHistory}>
+						{renderRoutes(this.props.routes)}
+					</ConnectedRouter>
+				</Provider>
+			</LocaleProvider>
 		);
 	}
 

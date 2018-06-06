@@ -1,6 +1,7 @@
 import React from 'react';
 
 class StarFieldCanvas extends React.Component {
+
 	flag = true
 	test = true
 	n = 512
@@ -21,10 +22,14 @@ class StarFieldCanvas extends React.Component {
 	cursor_y = 0
 	mouse_x = 0
 	mouse_y = 0
-	context
+	context = {}
 	key
 	timeout
 	fps = 0
+
+	shouldComponentUpdate = () => {
+		return false;
+	}
 
 	componentDidMount = () => {
 		document.onkeypress = this.keyManager;
@@ -53,7 +58,7 @@ class StarFieldCanvas extends React.Component {
 	anim = () => {
 		this.mouse_x = this.cursor_x - this.x;
 		this.mouse_y = this.cursor_y - this.y;
-		this.context.fillRect(0, 0, this.w, this.h);
+		this.starField.getContext('2d').fillRect(0, 0, this.w, this.h);
 		for (let i=0; i < this.n; i++) {
 			this.test = true;
 			this.star_x_save = this.star[i][3];
@@ -88,12 +93,12 @@ class StarFieldCanvas extends React.Component {
 			this.star[i][3] = this.x + (this.star[i][0] / this.star[i][2]) * this.star_ratio;
 			this.star[i][4] = this.y + (this.star[i][1] / this.star[i][2]) * this.star_ratio;
 			if (this.star_x_save > 0 && this.star_x_save < this.w && this.star_y_save > 0 && this.star_y_save < this.h && this.test) {
-				this.context.lineWidth = (1 - this.star_color_ratio * this.star[i][2]) * 2;
-				this.context.beginPath();
-				this.context.moveTo(this.star_x_save, this.star_y_save);
-				this.context.lineTo(this.star[i][3], this.star[i][4]);
-				this.context.stroke();
-				this.context.closePath();
+				this.starField.getContext('2d').lineWidth = (1 - this.star_color_ratio * this.star[i][2]) * 2;
+				this.starField.getContext('2d').beginPath();
+				this.starField.getContext('2d').moveTo(this.star_x_save, this.star_y_save);
+				this.starField.getContext('2d').lineTo(this.star[i][3], this.star[i][4]);
+				this.starField.getContext('2d').stroke();
+				this.starField.getContext('2d').closePath();
 			}
 		}
 		this.timeout = setTimeout(() => this.anim(), this.fps);
@@ -104,8 +109,7 @@ class StarFieldCanvas extends React.Component {
 		this.key = ev.which || ev.keyCode;
 		switch(this.key) {
 			case 13: {
-				this.star_speed = 4;
-				this.context.fillStyle = 'rgba(0,0,0,' + this.opacity + ')';
+				this.speedUp();
 				break;
 			}
 		}
@@ -114,11 +118,19 @@ class StarFieldCanvas extends React.Component {
 	release = () => {
 		switch(this.key) {
 			case 13: {
-				this.star_speed = 1;
-				this.context.fillStyle = 'rgb(0,0,0)';
+				this.slowDown();
 				break;
 			}
 		}
+	}
+
+	speedUp = () => {
+		this.star_speed = 4;
+		this.starField.getContext('2d').fillStyle = 'rgba(0,0,0,' + this.opacity + ')';
+	}
+	slowDown = () => {
+		this.star_speed = 1;
+		this.starField.getContext('2d').fillStyle = 'rgb(0,0,0)';
 	}
 
 	init = () => {
@@ -130,13 +142,12 @@ class StarFieldCanvas extends React.Component {
 			this.star[i][3] = 0;
 			this.star[i][4] = 0;
 		}
-		const starField = document.getElementById('starfield');
-		starField.style.position = 'absolute';
-		starField.width = this.w;
-		starField.height = this.h;
-		this.context = starField.getContext('2d');
-		this.context.fillStyle = 'rgb(0,0,0)';
-		this.context.strokeStyle = 'rgb(255,255,255)';
+		// const starField = document.getElementById('starfield');
+		this.starField.style.position = 'absolute';
+		this.starField.width = this.w;
+		this.starField.height = this.h;
+		this.starField.getContext('2d').fillStyle = 'rgb(0,0,0)';
+		this.starField.getContext('2d').strokeStyle = 'rgb(255,255,255)';
 	}
 
 	start = () => {
@@ -145,7 +156,7 @@ class StarFieldCanvas extends React.Component {
 	}
 
 	render() {
-		return <canvas id="starfield" style={{zIndex: -1, backgroundColor: 'rgb(0, 0, 0)', position: 'absolute'}} />;
+		return <canvas ref={node => this.starField = node} style={{zIndex: -1, backgroundColor: 'rgb(0, 0, 0)', position: 'absolute'}} />;
 	}
 }
 
