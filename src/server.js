@@ -8,7 +8,7 @@ import url from 'url';
 import compression from 'compression';
 import bodyParser from 'body-parser';
 
-const port = 8888;
+const port = 8666;
 const app = new Express();
 const server = new Server(app);
 
@@ -18,7 +18,7 @@ app.use(compression());
 app.use(bodyParser.json());
 
 const buildPath = path.join(__dirname + './../build/');
-const webpackDevServerBuildPath = 'http://127.0.0.1:9000/build/';
+const webpackDevServerBuildPath = 'http://0.0.0.0:6686/build/';
 if (process.env.NODE_ENV === 'production') {
 	app.use('/build', Express.static(buildPath, { maxAge: '1y' }));
 	app.set('views', buildPath);

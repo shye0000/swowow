@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import createBrowserHistory from 'history/createBrowserHistory';
+import createHashHistory from 'history/createHashHistory';
 import { AppContainer } from 'react-hot-loader';
 import routes from './routes';
 import App from './components/App';
 import appStore from './redux/store';
 
 // create the redux router middleware
-const history = createBrowserHistory();
+const history = createHashHistory();
 
 const render = Component => {
 	ReactDOM.render(

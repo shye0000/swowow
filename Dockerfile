@@ -1,6 +1,6 @@
 FROM node:8.9.3
 
-CMD ["/bin/sh", "-c", "/var/scripts/starter.sh"]
+CMD ["/bin/bash", "-c", "/var/scripts/starter.sh"]
 
 WORKDIR /app
 

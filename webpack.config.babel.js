@@ -9,10 +9,10 @@ import HtmlWebpackHarddiskPlugin from 'html-webpack-harddisk-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 
 const isDeveloping = process.env.NODE_ENV !== 'production';
-const bundleAnalyzerHost = '127.0.0.1';
-const bundleAnalyzerPort = 8889;
-const webpackDevServerHost = '127.0.0.1';
-const webpackDevServerPort = 9000;
+const bundleAnalyzerHost = '0.0.0.0';
+const bundleAnalyzerPort = 6866;
+const webpackDevServerHost = '0.0.0.0';
+const webpackDevServerPort = 6686;
 const staticBuildPath = path.resolve('./build');
 
 let jsFileName, cssFileName, devToolSourceMap, publicPath,
@@ -102,7 +102,7 @@ if (isDeveloping) {
 			}
 		]
 	});
-	publicPath = '/build/';
+	publicPath = '';
 	jsFileName = 'js/[name]-[hash].js';
 	cssFileName = 'css/[name]-[hash].css';
 	devToolSourceMap = 'none';

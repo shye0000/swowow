@@ -14,9 +14,9 @@ Project deployment :
 ```
 npm run dev
 
-Project url:                                localhost:8888
-webpack-bundle-analyzer interface url:      localhost:8889
-webpack-dev-server url:                     localhost:9000
+Project url:                                localhost:8666
+webpack-bundle-analyzer interface url:      localhost:6868
+webpack-dev-server url:                     localhost:6686
 ```
 
 ### [ Run tests (coming soon, I hope...) ]
