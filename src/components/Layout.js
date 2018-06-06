@@ -7,8 +7,8 @@ import './Layout.scss';
 
 class Layout extends React.Component {
 
-	UNSAFE_componentWillReceiveProps (nextProps) {
-		const {processing} = nextProps;
+	componentDidUpdate () {
+		const {processing} = this.props;
 		if (processing) {
 			this.field.speedUp();
 		} else {
