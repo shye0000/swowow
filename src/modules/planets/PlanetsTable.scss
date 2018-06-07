@@ -27,4 +27,24 @@
       }
     }
   }
+  .ant-pagination-prev, .ant-pagination-next {
+    a {
+      background: none;
+      border-style: dashed;
+      border-width: 2px;
+      color: white;
+      font-weight: bold;
+    }
+  }
+
+  .ant-pagination-item {
+    border-style: dashed;
+    border-width: 2px;
+    background: none;
+    &:not(.ant-pagination-item-active) {
+      a {
+        color: white;
+      }
+    }
+  }
 }

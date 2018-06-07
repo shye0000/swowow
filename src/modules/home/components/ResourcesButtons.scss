@@ -1,0 +1,11 @@
+.resources-buttons {
+  button, a {
+    border-style: dashed;
+    border-width: 2px;
+    &[disabled] {
+      color: white;
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+}
