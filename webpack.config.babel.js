@@ -9,9 +9,9 @@ import HtmlWebpackHarddiskPlugin from 'html-webpack-harddisk-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 
 const isDeveloping = process.env.NODE_ENV !== 'production';
-const bundleAnalyzerHost = 'localhost';
+const bundleAnalyzerHost = '0.0.0.0';
 const bundleAnalyzerPort = 6866;
-const webpackDevServerHost = 'localhost';
+const webpackDevServerHost = '0.0.0.0';
 const webpackDevServerPort = 6686;
 const staticBuildPath = path.resolve('./build');
 
