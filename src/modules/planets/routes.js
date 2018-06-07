@@ -2,10 +2,10 @@ import asyncRoute from '../../utils/CodeSplitting/asyncRoute/asyncRoute';
 
 const PlanetsTable = asyncRoute(
 	() => import(
-		/* webpackChunkName: "home" */
+		/* webpackChunkName: "planetsTable" */
 		'./PlanetsTable'),
 	() => import(
-		/* webpackChunkName: "rootReducers" */
+		/* webpackChunkName: "planetsReducers" */
 		'./redux/reducers')
 );
 
