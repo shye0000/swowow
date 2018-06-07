@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import HomeLink from '../../components/HomeLink';
-import {fetchPlanets} from './redux/actions';
+import {fetchPlanets, setCurrentPlanet} from './redux/actions';
 import { slowDown, speedUp } from '../../redux/actions';
 import Table from 'antd/lib/table';
 import './PlanetsTable.scss';
@@ -21,8 +21,12 @@ class PlanetsTable extends React.Component {
 		title: 'Name',
 		dataIndex: 'name',
 		key: 'name',
-		render: (text) => {
-			return <Link to="/planets/something">{text}</Link>;
+		render: (text, record) => {
+			const planetUrl = encodeURIComponent(record.url);
+			return <Link
+				to={`/planets/${planetUrl}`}
+				onClick={() => this.props.setCurrentPlanet(record)}
+			>{text}</Link>;
 		}
 	}, {
 		title: 'Diameter',
@@ -92,6 +96,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
+		setCurrentPlanet: (planet) => {
+			dispatch(setCurrentPlanet(planet));
+		},
 		fetchPlanets: (page) => {
 			dispatch(speedUp());
 			dispatch(fetchPlanets(page)).then(() => dispatch(slowDown())).catch(() => dispatch(slowDown()));

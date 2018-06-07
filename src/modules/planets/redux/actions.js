@@ -3,6 +3,7 @@ import parseObjToQueryString from '../../../utils/parseObjToQueryString';
 export const PLANETS_FETCHING = 'PLANETS_FETCHING';
 export const PLANETS_FETCH_SUCCESS = 'PLANETS_FETCH_SUCCESS';
 export const PLANETS_FETCH_FAIL = 'PLANETS_FETCH_FAIL';
+export const SET_CURRENT_PLANET = 'SET_CURRENT_PLANET';
 
 export const PLANET_BASE_URL = 'https://swapi.co/api/planets';
 
@@ -21,17 +22,41 @@ export const fetchPlanets = (page = 1) => {
 	};
 };
 
+export const fetchPlanet = (url) => {
+	return (dispatch) => {
+		if (url) {
+			dispatch(planetsFetching());
+			return fetch(url)
+				.then(resp => resp.json())
+				.then(planet => dispatch(setCurrentPlanet(planet)))
+				.catch(error => {
+					dispatch(planetsFetchFail());
+					throw(error);
+				});
+		}
+	};
+};
+
+export const setCurrentPlanet = (planet) => {
+	return {
+		type: SET_CURRENT_PLANET,
+		planet
+	};
+};
+
 const planetsFetching = () => {
 	return {
 		type: PLANETS_FETCHING
 	};
 };
+
 const planetsFetchSuccess = (planetsCollection) => {
 	return {
 		type: PLANETS_FETCH_SUCCESS,
 		planetsCollection
 	};
 };
+
 const planetsFetchFail = () => {
 	return {
 		type: PLANETS_FETCH_FAIL

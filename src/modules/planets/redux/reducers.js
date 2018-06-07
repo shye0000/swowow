@@ -1,7 +1,8 @@
 import {
 	PLANETS_FETCHING,
 	PLANETS_FETCH_SUCCESS,
-	PLANETS_FETCH_FAIL
+	PLANETS_FETCH_FAIL,
+	SET_CURRENT_PLANET
 } from './actions';
 
 const reducers = (state = [], action) => {
@@ -25,7 +26,13 @@ const reducers = (state = [], action) => {
 				fetchSuccess: false
 			};
 		}
-
+		case SET_CURRENT_PLANET: {
+			return {
+				fetching: false,
+				fetchSuccess: true,
+				currentPlanet: action.planet
+			};
+		}
 		default: {
 			return state;
 		}
