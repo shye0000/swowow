@@ -1,17 +1,18 @@
+@import "../../styles/vars";
 .planets-table {
   height: 100%;
-  padding: 20px 30px;
+  padding: $sm-padding $lg-padding;
   overflow-y: auto;
   overflow-x: hidden;
   color: white;
   font-weight: bold;
   .table-name {
-    margin-top: 30px;
+    margin-top: $lg-padding;
     font-size: 2em;
   }
   .table-body {
     background: none;
-    margin-top: 30px;
+    margin-top: $lg-padding;
     .ant-table-placeholder {
       background: none;
     }

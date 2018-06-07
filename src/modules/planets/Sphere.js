@@ -5,7 +5,7 @@ const Sphere = ({diameter}) => {
 	if (parseInt(diameter) === 0) {
 		size = 0;
 	} else {
-		size = diameter * 3 / 100 || 50;
+		size = diameter * 3 / 100 || 150;
 	}
 	return <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width={size} height={size} viewBox="-1.2 -1.2 2.2 2.2">
 		<g fill="hsla(203, 85%, 95%, .015)" stroke="hsla(255,255%,255%,.2)" strokeWidth="0.01">
