@@ -21,10 +21,12 @@ class Layout extends React.Component {
 			<div className="layout">
 				<StarFieldCanvas ref={node => this.field = node}/>
 				<ReactResizeDetector handleWidth handleHeight onResize={() => this.field.resize()} />
-				{renderRoutes(this.props.route.routes)}
+				<div className="body-wrapper">
+					{renderRoutes(this.props.route.routes)}
+				</div>
 				<div className="swapi-link-wrapper">
-					{'Powered by '}
-					<a href="https://swapi.co/" target="_blank" rel="noopener noreferrer" >SWAPI</a>
+					<span>{'Powered by '}</span>
+					<span><a href="https://swapi.co/" target="_blank" rel="noopener noreferrer" >SWAPI</a></span>
 				</div>
 			</div>
 		);

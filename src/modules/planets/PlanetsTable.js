@@ -21,6 +21,7 @@ class PlanetsTable extends React.Component {
 		title: 'Name',
 		dataIndex: 'name',
 		key: 'name',
+		width: 100,
 		render: (text, record) => {
 			const planetUrl = encodeURIComponent(record.url);
 			return <Link
@@ -32,14 +33,17 @@ class PlanetsTable extends React.Component {
 		title: 'Diameter',
 		dataIndex: 'diameter',
 		key: 'diameter',
+		width: 100,
 	}, {
 		title: 'Climate',
 		dataIndex: 'climate',
 		key: 'climate',
+		width: 200,
 	}, {
 		title: 'Population',
 		dataIndex: 'population',
 		key: 'population',
+		width: 200
 	}];
 
 	addKeyToDataSource = (dataSource) => {

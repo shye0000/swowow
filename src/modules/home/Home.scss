@@ -1,3 +1,4 @@
+@import "../../styles/vars";
 .home {
   color: white;
   height: 100%;
@@ -10,6 +11,9 @@
     font-size: 6em;
     font-weight: bold;
     text-align: center;
+  }
+  .home-msg {
+    margin: $xlg-padding 0;
   }
   .resources-buttons {
     button, a {
