@@ -1,7 +1,9 @@
 import {routerReducer} from 'react-router-redux';
 import {SPEED_UP, SLOW_DOWN} from './actions';
 
-const globalReducers = (state = [], action) => {
+const initialState = { speedUp: false };
+
+const globalReducers = (state = initialState, action) => {
 	switch (action.type) {
 		case SPEED_UP: {
 			return {

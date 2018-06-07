@@ -6,6 +6,7 @@ export const speedUp = () => {
 		type: SPEED_UP
 	};
 };
+
 export const slowDown = () => {
 	return {
 		type: SLOW_DOWN

@@ -3,11 +3,18 @@
 ### [ Container Docker ]
 
 
-Project deployment :
+### [ Project deployment ]
 
     $ docker-compose build
     $ docker-compose up -d
     $ docker exec -it swowow bash
+
+### [ Run tests ]
+
+```
+npm test
+npm run test:watch
+```
 
 ### [ Start development environment ]
 

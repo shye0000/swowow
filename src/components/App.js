@@ -7,8 +7,6 @@ import antI18n from 'antd/lib/locale-provider/en_US.js';
 import './App.scss';
 import '../styles/ant-theme.less';
 
-
-
 class App extends React.Component {
 	render() {
 		const supportsHistory = typeof window !== 'undefined' && 'pushState' in window.history;

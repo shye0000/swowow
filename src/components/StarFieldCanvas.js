@@ -26,11 +26,7 @@ class StarFieldCanvas extends React.Component {
 	key
 	timeout
 	fps = 0
-	fast = false;
-
-	shouldComponentUpdate = () => {
-		return false;
-	}
+	fast = false
 
 	componentDidMount = () => {
 		document.onkeypress = this.keyManager;

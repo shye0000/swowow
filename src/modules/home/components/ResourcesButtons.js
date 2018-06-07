@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from 'antd/lib/button';
-import Animate from 'rc-animate';
 import './ResourcesButtons.scss';
 
 const supportedResources = ['planets'];

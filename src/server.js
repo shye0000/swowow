@@ -18,7 +18,7 @@ app.use(compression());
 app.use(bodyParser.json());
 
 const buildPath = path.join(__dirname + './../build/');
-const webpackDevServerBuildPath = 'http://0.0.0.0:6686/build/';
+const webpackDevServerBuildPath = 'http://localhost:6686/build/';
 if (process.env.NODE_ENV === 'production') {
 	app.use('/build', Express.static(buildPath, { maxAge: '1y' }));
 	app.set('views', buildPath);

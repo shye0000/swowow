@@ -48,6 +48,7 @@
     "describe": true,
     "jest": true,
     "it": true,
-    "expect": true
+    "expect": true,
+    "afterEach": true
   }
 }

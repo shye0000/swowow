@@ -5,16 +5,24 @@ import {
 	SET_CURRENT_PLANET
 } from './actions';
 
-const reducers = (state = [], action) => {
+const initialState = {
+	fetching: false,
+	fetchSuccess: false,
+	planetsCollection: null,
+	currentPlanet: null,
+};
+
+const reducers = (state = initialState, action) => {
 	switch (action.type) {
 		case PLANETS_FETCHING: {
 			return {
+				...state,
 				fetching: true,
-				planetsCollection: state.planetsCollection
 			};
 		}
 		case PLANETS_FETCH_SUCCESS: {
 			return {
+				...state,
 				fetching: false,
 				fetchSuccess: true,
 				planetsCollection: action.planetsCollection
@@ -22,12 +30,14 @@ const reducers = (state = [], action) => {
 		}
 		case PLANETS_FETCH_FAIL: {
 			return {
+				...state,
 				fetching: false,
 				fetchSuccess: false
 			};
 		}
 		case SET_CURRENT_PLANET: {
 			return {
+				...state,
 				fetching: false,
 				fetchSuccess: true,
 				currentPlanet: action.planet
