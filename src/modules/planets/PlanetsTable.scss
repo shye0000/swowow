@@ -1,0 +1,29 @@
+.planets-table {
+  height: 100%;
+  padding: 20px 30px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  color: white;
+  font-weight: bold;
+  .table-name {
+    margin-top: 30px;
+    font-size: 2em;
+  }
+  .table-body {
+    background: none;
+    margin-top: 30px;
+    .ant-table-placeholder {
+      background: none;
+    }
+    th, td {
+      background: none;
+      color: white;
+    }
+    tr:hover {
+      td {
+        background: rgba(60,60,60,0.35);
+        color: white;
+      }
+    }
+  }
+}

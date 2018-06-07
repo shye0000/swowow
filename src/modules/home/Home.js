@@ -21,7 +21,7 @@ const Msg = ({fetching, fetchSuccess, counter}) => {
 			transitionName="fade"
 			transitionAppear
 		>
-			<div>Star Wars</div>
+			<div>STAR WARS</div>
 		</Animate>;
 	}
 	if (counter) {

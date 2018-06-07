@@ -7,7 +7,7 @@ const supportedResources = ['planets'];
 const getResourceHref = (resource) => {
 	switch (resource) {
 		case 'planets': {
-			return '/#/planets';
+			return '#/planets';
 		}
 	}
 };

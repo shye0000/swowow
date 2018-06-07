@@ -1,9 +1,11 @@
 import Layout from './components/Layout';
-import {routes as NotFoundRoutes} from './modules/notFound/routes';
-import {routes as HomeRoutes} from './modules/home/routes';
+import NotFoundRoutes from './modules/notFound/routes';
+import HomeRoutes from './modules/home/routes';
+import PlanetsRoutes from './modules/planets/routes';
 
 const moduleRoutes = [
 	...HomeRoutes,
+	...PlanetsRoutes,
 	// todo routes to be completed with other modules
 ];
 

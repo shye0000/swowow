@@ -26,6 +26,7 @@ class StarFieldCanvas extends React.Component {
 	key
 	timeout
 	fps = 0
+	fast = false;
 
 	shouldComponentUpdate = () => {
 		return false;
@@ -33,7 +34,7 @@ class StarFieldCanvas extends React.Component {
 
 	componentDidMount = () => {
 		document.onkeypress = this.keyManager;
-		document.onkeyup = this.release;
+		// document.onkeyup = this.release;
 		this.start();
 	}
 
@@ -109,26 +110,32 @@ class StarFieldCanvas extends React.Component {
 		this.key = ev.which || ev.keyCode;
 		switch(this.key) {
 			case 13: {
-				this.speedUp();
+				if (this.fast) {
+					this.slowDown();
+				} else {
+					this.speedUp();
+				}
 				break;
 			}
 		}
 	}
 
-	release = () => {
-		switch(this.key) {
-			case 13: {
-				this.slowDown();
-				break;
-			}
-		}
-	}
+	// release = () => {
+	// 	switch(this.key) {
+	// 		case 13: {
+	// 			this.slowDown();
+	// 			break;
+	// 		}
+	// 	}
+	// }
 
 	speedUp = () => {
+		this.fast = true;
 		this.star_speed = 4;
 		this.starField.getContext('2d').fillStyle = 'rgba(0,0,0,' + this.opacity + ')';
 	}
 	slowDown = () => {
+		this.fast = false;
 		this.star_speed = 1;
 		this.starField.getContext('2d').fillStyle = 'rgb(0,0,0)';
 	}

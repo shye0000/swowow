@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import HomeLink from '../../components/HomeLink';
 import './NotFoundPage.scss';
 
 export class NotFoundPage extends React.Component {
@@ -9,7 +9,7 @@ export class NotFoundPage extends React.Component {
 				<h1>404</h1>
 				<h2>Nothing here!</h2>
 				<p>
-					<Link to="/">Back to home</Link>
+					<HomeLink />
 				</p>
 			</div>
 		);
