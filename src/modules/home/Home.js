@@ -71,7 +71,12 @@ class HomePage extends React.Component {
 				{!fetchSuccess && counter ? <div className="home-counter">{counter}</div> : null}
 				<div className="home-msg">
 					<Msg fetching={fetching} fetchSuccess={fetchSuccess} counter={counter} />
-					{fetchSuccess ? <ResourcesButtons root={root} /> : null}
+					<Animate
+						transitionName="fade"
+						transitionAppear
+					>
+						{fetchSuccess ? <ResourcesButtons root={root} /> : null}
+					</Animate>
 				</div>
 			</div>
 		);

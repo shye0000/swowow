@@ -9,17 +9,19 @@
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 6em;
+    line-height: normal;
     font-weight: bold;
     text-align: center;
+    width: 100%;
+    padding: $sm-padding $lg-padding;
+    max-width: 800px;
   }
   .resources-buttons {
+    margin-top: 30px;
     font-size: 0.5em;
     button, a {
       text-transform: uppercase;
       font-weight: bold;
-      &:not(:last-child) {
-        margin-right: 10px;
-      }
     }
   }
 }

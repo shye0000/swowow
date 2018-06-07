@@ -1,11 +1,21 @@
 .resources-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: space-around;
   button, a {
+    margin-right: 0;
+    flex: 1;
+    text-align: center;
+    width: 115px;
+    max-width: 115px;
+    min-width: 115px;
+    margin-bottom: 10px;
     border-style: dashed;
     border-width: 2px;
     &[disabled] {
-      color: white;
-      cursor: not-allowed;
-      opacity: 0.5;
+      color: grey;
+      border-color: grey;
     }
   }
 }

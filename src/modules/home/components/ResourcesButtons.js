@@ -18,18 +18,13 @@ const getResourceHref = (resource) => {
 
 const ResourcesButtons = ({root}) => {
 	return <div className="resources-buttons">
-		<Animate
-			transitionName="fade"
-			transitionAppear
-		>
-			{Object.keys(root).map((resource) => {
-				return <Button
-					disabled={!supportedResources.includes(resource)}
-					key={resource} type="dashed" ghost
-					href={getResourceHref(resource)}
-				>{resource}</Button>;
-			})}
-		</Animate>
+		{Object.keys(root).map((resource) => {
+			return <Button
+				disabled={!supportedResources.includes(resource)}
+				key={resource} type="dashed" ghost
+				href={getResourceHref(resource)}
+			>{resource}</Button>;
+		})}
 	</div>;
 };
 
