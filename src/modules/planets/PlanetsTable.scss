@@ -28,6 +28,7 @@
     }
   }
   .ant-pagination-prev, .ant-pagination-next {
+    margin-bottom: 10px;
     a {
       background: none;
       border-style: dashed;
@@ -35,12 +36,23 @@
       color: white;
       font-weight: bold;
     }
+    &:hover {
+      a {
+        color: white;
+      }
+    }
+    &.ant-pagination-disabled {
+      opacity: 0.5;
+    }
   }
 
   .ant-pagination-item {
+    margin-bottom: 10px;
     border-style: dashed;
     border-width: 2px;
     background: none;
+    font-weight: bold;
+
     &:not(.ant-pagination-item-active) {
       a {
         color: white;

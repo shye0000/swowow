@@ -20,7 +20,7 @@ let jsFileName, cssFileName, devToolSourceMap, publicPath,
 
 if (isDeveloping) {
 	//configuration for development
-	styleLoaderConfig = [ 'style-loader', 'css-loader?sourceMap', 'sass-loader?sourceMap', 'postcss-loader?sourceMap' ];
+	styleLoaderConfig = [ 'style-loader', 'css-loader?sourceMap', 'postcss-loader?sourceMap', 'sass-loader?sourceMap' ];
 	publicPath = 'http://' + webpackDevServerHost + ':' + webpackDevServerPort + '/build/';
 	jsFileName = 'js/[name].js';
 	cssFileName = 'css/[name].css';
@@ -63,13 +63,13 @@ if (isDeveloping) {
 				}
 			},
 			{
-				loader: 'sass-loader',
+				loader: 'postcss-loader',
 				options: {
 					sourceMap: false
 				}
 			},
 			{
-				loader: 'postcss-loader',
+				loader: 'sass-loader',
 				options: {
 					sourceMap: false
 				}

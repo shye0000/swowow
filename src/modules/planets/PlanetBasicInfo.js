@@ -3,9 +3,9 @@ import Row from 'antd/lib/row';
 import Col from 'antd/lib/col';
 
 const InfoRow = ({label, value}) => {
-	return <Row gutter={24} type="flex">
-		<Col xs={24} md={12}>{label}</Col>
-		<Col xs={24} md={12}>{value}</Col>
+	return <Row gutter={24} type="flex" align="top">
+		<Col xs={24} md={12} >{label}</Col>
+		<Col xs={24} md={12} style={{textAlign: 'right', marginBottom: '10px'}}>{value}</Col>
 	</Row>;
 };
 
