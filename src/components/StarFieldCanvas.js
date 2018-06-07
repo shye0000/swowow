@@ -149,12 +149,16 @@ class StarFieldCanvas extends React.Component {
 			this.star[i][3] = 0;
 			this.star[i][4] = 0;
 		}
-		// const starField = document.getElementById('starfield');
 		this.starField.style.position = 'absolute';
 		this.starField.width = this.w;
 		this.starField.height = this.h;
-		this.starField.getContext('2d').fillStyle = 'rgb(0,0,0)';
 		this.starField.getContext('2d').strokeStyle = 'rgb(255,255,255)';
+		if (this.fast) {
+			this.speedUp();
+		} else {
+			this.slowDown();
+		}
+
 	}
 
 	start = () => {
