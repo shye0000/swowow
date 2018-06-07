@@ -7,7 +7,7 @@ Project deployment :
 
     $ docker-compose build
     $ docker-compose up -d
-    $ docker exec -it swowow sh
+    $ docker exec -it swowow bash
 
 ### [ Start development environment ]
 
@@ -17,12 +17,6 @@ npm run dev
 Project url:                                localhost:8666
 webpack-bundle-analyzer interface url:      localhost:6868
 webpack-dev-server url:                     localhost:6686
-```
-
-### [ Run tests (coming soon, I hope...) ]
-
-```
-npm test
 ```
 
 ### [ Versionning project ]
