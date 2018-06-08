@@ -1,0 +1,322 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlanetsTable render correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <PlanetsTable
+    fetchPlanets={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+      }
+    }
+    fetchSuccess={true}
+    fetching={false}
+    planetsCollection={Object {}}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <HomeLink />,
+        <div
+          className="table-name"
+        >
+          STAR WARS PLANETS
+        </div>,
+        <Table
+          bordered={false}
+          className="table-body"
+          columns={
+            Array [
+              Object {
+                "dataIndex": "name",
+                "key": "name",
+                "render": [Function],
+                "title": "Name",
+                "width": 100,
+              },
+              Object {
+                "dataIndex": "diameter",
+                "key": "diameter",
+                "title": "Diameter",
+                "width": 100,
+              },
+              Object {
+                "dataIndex": "climate",
+                "key": "climate",
+                "title": "Climate",
+                "width": 200,
+              },
+              Object {
+                "dataIndex": "population",
+                "key": "population",
+                "title": "Population",
+                "width": 200,
+              },
+            ]
+          }
+          dataSource={Array []}
+          indentSize={20}
+          loading={false}
+          locale={Object {}}
+          onChange={[Function]}
+          pagination={
+            Object {
+              "current": 1,
+              "total": undefined,
+            }
+          }
+          prefixCls="ant-table"
+          rowKey="key"
+          showHeader={true}
+          size="large"
+          useFixedHeader={false}
+        />,
+      ],
+      "className": "planets-table",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "STAR WARS PLANETS",
+          "className": "table-name",
+        },
+        "ref": null,
+        "rendered": "STAR WARS PLANETS",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "bordered": false,
+          "className": "table-body",
+          "columns": Array [
+            Object {
+              "dataIndex": "name",
+              "key": "name",
+              "render": [Function],
+              "title": "Name",
+              "width": 100,
+            },
+            Object {
+              "dataIndex": "diameter",
+              "key": "diameter",
+              "title": "Diameter",
+              "width": 100,
+            },
+            Object {
+              "dataIndex": "climate",
+              "key": "climate",
+              "title": "Climate",
+              "width": 200,
+            },
+            Object {
+              "dataIndex": "population",
+              "key": "population",
+              "title": "Population",
+              "width": 200,
+            },
+          ],
+          "dataSource": Array [],
+          "indentSize": 20,
+          "loading": false,
+          "locale": Object {},
+          "onChange": [Function],
+          "pagination": Object {
+            "current": 1,
+            "total": undefined,
+          },
+          "prefixCls": "ant-table",
+          "rowKey": "key",
+          "showHeader": true,
+          "size": "large",
+          "useFixedHeader": false,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <HomeLink />,
+          <div
+            className="table-name"
+          >
+            STAR WARS PLANETS
+          </div>,
+          <Table
+            bordered={false}
+            className="table-body"
+            columns={
+              Array [
+                Object {
+                  "dataIndex": "name",
+                  "key": "name",
+                  "render": [Function],
+                  "title": "Name",
+                  "width": 100,
+                },
+                Object {
+                  "dataIndex": "diameter",
+                  "key": "diameter",
+                  "title": "Diameter",
+                  "width": 100,
+                },
+                Object {
+                  "dataIndex": "climate",
+                  "key": "climate",
+                  "title": "Climate",
+                  "width": 200,
+                },
+                Object {
+                  "dataIndex": "population",
+                  "key": "population",
+                  "title": "Population",
+                  "width": 200,
+                },
+              ]
+            }
+            dataSource={Array []}
+            indentSize={20}
+            loading={false}
+            locale={Object {}}
+            onChange={[Function]}
+            pagination={
+              Object {
+                "current": 1,
+                "total": undefined,
+              }
+            }
+            prefixCls="ant-table"
+            rowKey="key"
+            showHeader={true}
+            size="large"
+            useFixedHeader={false}
+          />,
+        ],
+        "className": "planets-table",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "STAR WARS PLANETS",
+            "className": "table-name",
+          },
+          "ref": null,
+          "rendered": "STAR WARS PLANETS",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "bordered": false,
+            "className": "table-body",
+            "columns": Array [
+              Object {
+                "dataIndex": "name",
+                "key": "name",
+                "render": [Function],
+                "title": "Name",
+                "width": 100,
+              },
+              Object {
+                "dataIndex": "diameter",
+                "key": "diameter",
+                "title": "Diameter",
+                "width": 100,
+              },
+              Object {
+                "dataIndex": "climate",
+                "key": "climate",
+                "title": "Climate",
+                "width": 200,
+              },
+              Object {
+                "dataIndex": "population",
+                "key": "population",
+                "title": "Population",
+                "width": 200,
+              },
+            ],
+            "dataSource": Array [],
+            "indentSize": 20,
+            "loading": false,
+            "locale": Object {},
+            "onChange": [Function],
+            "pagination": Object {
+              "current": 1,
+              "total": undefined,
+            },
+            "prefixCls": "ant-table",
+            "rowKey": "key",
+            "showHeader": true,
+            "size": "large",
+            "useFixedHeader": false,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
