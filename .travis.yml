@@ -1,26 +1,22 @@
 language: node_js
 node_js:
-    - '8.9.3'
-
+- 8.9.3
 install:
-  - npm install
-
+- npm install
 before_script:
-  - npm test
-
+- npm test
 script:
-  - npm run build
-
+- npm run build
 branches:
   only:
-    - master
-
+  - master
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token:
-    secure: LDpuolZGtjJ/rOzKJxStaTGz0/3jT0eX2slgvZfdGuS+8liIp997jCVtuE5bl42F/cCtuHzZ6F05fhDGH6g+kEruAdRXCRfhyulzrOmIHK8YG4sxgURI0gJzQXg/UJc7KNs4iJTTuQUVUaC5TRt2h35Z/zHsvpE76rOhjgu2gSAH2BUg/60hvtFobFMfijwkmwLXzQFet7McY/SpTbjyj6NIvGJ2wXg8uSdkD7VyfRtV3g8duZNAMoxmmyc1CJ4h7X04uIuRmAHGzvGFweyFqBdKApdXG3rYNeYOqUZMG03Bag8DK2k5H1TN8urg6sI0a6L2WQp5VNg1t7Pcrp0I5GnA8zZcqgCWtHs2OFywKwxR6USC8DVs2mdFNENzLTAlwil4NOe+n1tV6+Qwf5JBxvcA+zT3LIU8X119ij7CW25v76VPNfPNcAa5u+p6U6EFMbaM8zSwyAJBv/HvZH/8oj7L5ieGRW28IhqefDIdM0g8/9eoa+BIDqdsaP/FQiJkNAkoXzMrVhgdFRjgesxVwSDxosE9pCdIxmIIuwWmDG2QouygFMA8wAgYItAb0HpT+Ig/9O1i8bH8BYbKcVv2jAkyQ6+qAvPNilU42bY+tLuGIQc8IhIILbb27VYn/aTBYLde6a3+tiXxdu78ILYegQIen2y4S9XMMzAq5DpdD8Q=
   local_dir: build
   email: shye0000@gmail.com
   on:
     branch: master
+env:
+  global:
+    secure: 1vkQPO0YrKpqVIjKVdUd3imIjW6EOmfkSMrBuDWqFYQV+pzjBWubIY9gMViE0f+i66rPbhtqo4qHGz5W1vJBSP4en3N08+lS9o0TIimJjx8vWBWRYvgQ8iuc0/fUX/duXp3XCjVN4fHcx++7hALjFZVI3ka3yFwlo6qTrc3BWfwuOq0/tFcNsuWoszxt/Qc/Ln0KX4ZMtCNAhEouwxAR4+IMr8QjHZSv+UTY9f5+OvCiHN2i/Rky0kD59DNrO2WcUOHohZ5lOMWSGaXHx3UtS0XgGEz0nkgrq/T9ITUuReHCuW9Tcmdzw10auiM7EK/98wNwG1gzlPSKKjOLuGRpPVYJU7PZ9e4AOSmqftRV7QcchWmziBOk/wwvC53Wf2gpVVkArk7NTexfVqVJ/9ymkCaglwo2edsOfILFtPI4QzDf0WvZsfQpb3kDrjCjxq+5ndb2oShcko4Gl69zDdnq9lv03nY8XAj9X5tXRt8cemWyfzl/99o2sz95Ls8LSNH1jIfj4FDGgt5Nn4IzPqK2mqyhB6I/IaFZEyxmL79VNjuoDDU396W+YINPKBqDF91Ht1HSw3QK758sWuA7BTCH8kojZFF/BIfBfpDBYk3oRVKBMdkPcb7b+88epf3fwaNeSY0XqMp/tmHC+Tx16WVQ+Ipjzo1DldFEFVHpEl8AiTY=
