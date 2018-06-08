@@ -17,5 +17,6 @@ branches:
 
 deploy:
   provider: pages
+  skip_cleanup: true
   github_token:
     secure_token: 508b156b49712b4ea6e41d3a02a35f7cf24fa779
