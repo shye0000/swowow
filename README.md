@@ -1,9 +1,6 @@
 # swowow
 
-### [ Container Docker ]
-
-
-### [ Project deployment ]
+### [ Project deployment with docker-compose ]
 
 ```
 docker-compose build
