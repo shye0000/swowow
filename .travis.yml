@@ -9,16 +9,9 @@ before_script:
   - npm test
 
 script:
+  - git config --global user.email shye0000@gmail.com
   - npm run deploy
 
 branches:
   only:
     - master
-
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token:
-    secure: Q8RYBFbWQ70w+0DkLr8+u3vSkOzLsljhTG8/BKrURppUjySmG80H9ro+ssWKEL2JZT2EbMnuhcJnbVxEg3TT4TC59EjHf9jtzgkZAP/paTIKmbrw4uk0+wNu/OfLhgh/f/Ddoenv6R+kWisFLF5EXnMOUqZZ7LNYpo8LNRK6LUTUiqrFj9uKB9ffWDhXmXswj6L2IdCZxgMWXrmG+xitRe41pHkb5WqEpLUTf6hMcIRWQw75JCSrhEZcbh3tLv3tcW1tYJm4qNTfE/0QKghWpRndPYwZZDeFIbAK8d4nhijwneIaprEwukCxjc+mloXgZqWyP9IyRSAEIpGQ4CmLIbuBvIu20glcr/l9r/JZivsu2G+5HDnnW0dnqZke0OrBnPTXO4Mxhk4YWdV7FvHzMHPIiPPy6OXX4BYYAOm8wb3loXaDhqaipRvsG1k2Z3aLC17xbi42XWOw1LiUwQRC3uwrb8Qz2LoFvIqUIy4fcyZzsXUFJFEM05APPWRIhl1dwbv9wucUvcIRr01T2FCp9SgwyZDRcHBdB4gs88EAUahEPhXFQf0KvknxirJVym6qhCRgl68QDRN9LycW/9aPaD8lpNV7vAFHLii1zDI8utZ7x0HtdR3KDNBx5r2ktCFOt/xV2nQj7bt+/Kcz1NsarkrbunLjGsp9UacySIsOZ+c=
-    name: shye0000
-    email: shye0000@gmail.com
