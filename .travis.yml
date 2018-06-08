@@ -21,7 +21,7 @@ deploy:
   github_token:
     secure: "LDpuolZGtjJ/rOzKJxStaTGz0/3jT0eX2slgvZfdGuS+8liIp997jCVtuE5bl42F/cCtuHzZ6F05fhDGH6g+kEruAdRXCRfhyulzrOmIHK8YG4sxgURI0gJzQXg/UJc7KNs4iJTTuQUVUaC5TRt2h35Z/zHsvpE76rOhjgu2gSAH2BUg/60hvtFobFMfijwkmwLXzQFet7McY/SpTbjyj6NIvGJ2wXg8uSdkD7VyfRtV3g8duZNAMoxmmyc1CJ4h7X04uIuRmAHGzvGFweyFqBdKApdXG3rYNeYOqUZMG03Bag8DK2k5H1TN8urg6sI0a6L2WQp5VNg1t7Pcrp0I5GnA8zZcqgCWtHs2OFywKwxR6USC8DVs2mdFNENzLTAlwil4NOe+n1tV6+Qwf5JBxvcA+zT3LIU8X119ij7CW25v76VPNfPNcAa5u+p6U6EFMbaM8zSwyAJBv/HvZH/8oj7L5ieGRW28IhqefDIdM0g8/9eoa+BIDqdsaP/FQiJkNAkoXzMrVhgdFRjgesxVwSDxosE9pCdIxmIIuwWmDG2QouygFMA8wAgYItAb0HpT+Ig/9O1i8bH8BYbKcVv2jAkyQ6+qAvPNilU42bY+tLuGIQc8IhIILbb27VYn/aTBYLde6a3+tiXxdu78ILYegQIen2y4S9XMMzAq5DpdD8Q="
   local_dir: build
-  name: shye0000
+  name: shye0000/swowow
   email: shye0000@gmail.com
   on:
     branch: master
