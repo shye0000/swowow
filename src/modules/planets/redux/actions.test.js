@@ -37,9 +37,26 @@ describe('fetch root action', () => {
 			body: expectedPlanetsCollection,
 			headers: { 'content-type': 'application/json' }
 		});
-		store.dispatch(fetchPlanets()).then(() => {
+		return store.dispatch(fetchPlanets()).then(() => {
 			expect(store.getActions()).toEqual(expectedActions);
 		});
+
+	});
+
+	it('Make sure that the page number is the same of the page parameter passed in fetchPlanets', () => {
+
+		const expectedPlanetsCollection = {
+			count: 61,
+			next: 'https://swapi.co/api/planets/?page=2',
+			previous: null,
+			results:[]
+		};
+
+		const expectedActions = [
+			{ type: PLANETS_FETCHING },
+			{ type: PLANETS_FETCH_SUCCESS, planetsCollection: expectedPlanetsCollection }
+		];
+		const store = mockStore({ planets: [] });
 
 		fetchMock.getOnce(`${PLANET_BASE_URL}?page=2`, {
 			body: expectedPlanetsCollection,
@@ -67,7 +84,7 @@ describe('fetch root action', () => {
 			body: expectedPlanet,
 			headers: { 'content-type': 'application/json' }
 		});
-		store.dispatch(fetchPlanet(`${PLANET_BASE_URL}/1`)).then(() => {
+		return store.dispatch(fetchPlanet(`${PLANET_BASE_URL}/1`)).then(() => {
 			expect(store.getActions()).toEqual(expectedActions);
 		});
 

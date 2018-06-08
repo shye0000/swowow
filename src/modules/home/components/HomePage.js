@@ -1,10 +1,10 @@
 import React from 'react';
-import {fetchRoot} from './redux/actions';
+import {fetchRoot} from '../redux/actions';
 import {connect} from 'react-redux';
-import {speedUp} from '../../redux/actions';
-import ResourcesButtons from './components/ResourcesButtons';
+import {speedUp} from '../../../redux/actions';
+import ResourcesButtons from './ResourcesButtons';
 import Animate from 'rc-animate';
-import './Home.scss';
+import './HomePage.scss';
 
 const Msg = ({fetching, fetchSuccess, counter}) => {
 
@@ -35,7 +35,7 @@ const Msg = ({fetching, fetchSuccess, counter}) => {
 	</Animate>;
 };
 
-class HomePage extends React.Component {
+export class HomePage extends React.Component {
 
 	state = {
 		counter: 5

@@ -6,3 +6,4 @@ node_modules
 locale/**/*.js
 locale/**/*.custom.json
 locale/_build
+coverage

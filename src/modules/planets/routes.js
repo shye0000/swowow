@@ -3,7 +3,7 @@ import asyncRoute from '../../utils/CodeSplitting/asyncRoute/asyncRoute';
 const PlanetsTable = asyncRoute(
 	() => import(
 		/* webpackChunkName: "planetsTable" */
-		'./PlanetsTable'),
+		'./components/PlanetsTable'),
 	() => import(
 		/* webpackChunkName: "planetsReducers" */
 		'./redux/reducers')
@@ -12,7 +12,7 @@ const PlanetsTable = asyncRoute(
 const PlanetDetails = asyncRoute(
 	() => import(
 		/* webpackChunkName: "planetDetails" */
-		'./PlanetDetails'),
+		'./components/PlanetDetails'),
 	() => import(
 		/* webpackChunkName: "planetsReducers" */
 		'./redux/reducers')

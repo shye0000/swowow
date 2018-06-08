@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResourcesButtons render correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ResourcesButtons
+    root={
+      Object {
+        "people": "url_people",
+        "planets": "url_planets",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Button
+          disabled={false}
+          ghost={true}
+          href="#/planets"
+          loading={false}
+          prefixCls="ant-btn"
+          type="dashed"
+        >
+          planets
+        </Button>,
+        <Button
+          disabled={true}
+          ghost={true}
+          href="#/"
+          loading={false}
+          prefixCls="ant-btn"
+          type="dashed"
+        >
+          people
+        </Button>,
+      ],
+      "className": "resources-buttons",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "planets",
+        "nodeType": "class",
+        "props": Object {
+          "children": "planets",
+          "disabled": false,
+          "ghost": true,
+          "href": "#/planets",
+          "loading": false,
+          "prefixCls": "ant-btn",
+          "type": "dashed",
+        },
+        "ref": null,
+        "rendered": "planets",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "people",
+        "nodeType": "class",
+        "props": Object {
+          "children": "people",
+          "disabled": true,
+          "ghost": true,
+          "href": "#/",
+          "loading": false,
+          "prefixCls": "ant-btn",
+          "type": "dashed",
+        },
+        "ref": null,
+        "rendered": "people",
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Button
+            disabled={false}
+            ghost={true}
+            href="#/planets"
+            loading={false}
+            prefixCls="ant-btn"
+            type="dashed"
+          >
+            planets
+          </Button>,
+          <Button
+            disabled={true}
+            ghost={true}
+            href="#/"
+            loading={false}
+            prefixCls="ant-btn"
+            type="dashed"
+          >
+            people
+          </Button>,
+        ],
+        "className": "resources-buttons",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "planets",
+          "nodeType": "class",
+          "props": Object {
+            "children": "planets",
+            "disabled": false,
+            "ghost": true,
+            "href": "#/planets",
+            "loading": false,
+            "prefixCls": "ant-btn",
+            "type": "dashed",
+          },
+          "ref": null,
+          "rendered": "planets",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "people",
+          "nodeType": "class",
+          "props": Object {
+            "children": "people",
+            "disabled": true,
+            "ghost": true,
+            "href": "#/",
+            "loading": false,
+            "prefixCls": "ant-btn",
+            "type": "dashed",
+          },
+          "ref": null,
+          "rendered": "people",
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

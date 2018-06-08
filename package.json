@@ -10,7 +10,8 @@
   "scripts": {
     "test": "jest --colors",
     "test:watch": "npm test -- --watch",
-    "coverage": "jest --colors --coverage",
+    "test:updateSnapshot": "npm test -- --updateSnapshot",
+    "test:coverage": "npm test -- --coverage",
     "start": "cross-env NODE_ENV=production babel-node src/server.js",
     "build": "cross-env NODE_ENV=production webpack -p --profile --optimize-minimize",
     "predeploy": "npm run build",

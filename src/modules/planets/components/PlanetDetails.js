@@ -1,8 +1,8 @@
 import React from 'react';
 import './PlanetDetails.scss';
-import {slowDown, speedUp} from '../../redux/actions';
-import {fetchPlanet} from './redux/actions';
-import HomeLink from '../../components/HomeLink';
+import {slowDown, speedUp} from '../../../redux/actions';
+import {fetchPlanet} from '../redux/actions';
+import HomeLink from '../../../components/HomeLink';
 import PlanetsTableLink from './PlanetsTableLink';
 import Row from 'antd/lib/row';
 import Col from 'antd/lib/col';
@@ -12,9 +12,9 @@ import PlanetBasicInfo from './PlanetBasicInfo';
 import {connect} from 'react-redux';
 import Animate from 'rc-animate';
 
-class PlanetDetails extends React.Component {
+export class PlanetDetails extends React.Component {
 
-	componentDidMount () {
+	componentDidMount = () => {
 		const {planetUrl} = this.props.match.params;
 		const {currentPlanet, fetchPlanet} = this.props;
 		const url = decodeURIComponent(planetUrl);
@@ -35,7 +35,7 @@ class PlanetDetails extends React.Component {
 		} else if (!fetchSuccess){
 			content = <div className="error" >Bad luck, something went wrong...</div>;
 		} else if (currentPlanet){
-			const {diameter, name, residence, films} = currentPlanet;
+			const {diameter, name} = currentPlanet;
 			content = <Animate
 				transitionName="fade"
 				transitionAppear

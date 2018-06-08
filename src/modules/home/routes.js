@@ -1,9 +1,9 @@
 import asyncRoute from '../../utils/CodeSplitting/asyncRoute/asyncRoute';
 
-const Home = asyncRoute(
+const HomePage = asyncRoute(
 	() => import(
-		/* webpackChunkName: "home" */
-		'./Home'),
+		/* webpackChunkName: "homePage" */
+		'./components/HomePage'),
 	() => import(
 		/* webpackChunkName: "rootReducers" */
 		'./redux/reducers')
@@ -12,7 +12,7 @@ const Home = asyncRoute(
 const routes = [{
 	path: '/',
 	exact: true,
-	component: Home
+	component: HomePage
 }];
 
 export default routes;

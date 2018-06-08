@@ -1,15 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import HomeLink from '../../components/HomeLink';
-import {fetchPlanets, setCurrentPlanet} from './redux/actions';
-import { slowDown, speedUp } from '../../redux/actions';
+import HomeLink from '../../../components/HomeLink';
+import {fetchPlanets, setCurrentPlanet} from '../redux/actions';
+import { slowDown, speedUp } from '../../../redux/actions';
 import Table from 'antd/lib/table';
 import './PlanetsTable.scss';
 
-class PlanetsTable extends React.Component {
+export class PlanetsTable extends React.Component {
 
-	componentDidMount() {
+	componentDidMount = () => {
 		this.props.fetchPlanets();
 	}
 

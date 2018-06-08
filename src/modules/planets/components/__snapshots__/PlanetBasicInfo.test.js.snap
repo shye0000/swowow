@@ -1,0 +1,322 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlanetBasicInfo render correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <PlanetBasicInfo
+    planet={
+      Object {
+        "climate": "climate",
+        "diameter": 100,
+        "gravity": "gravity",
+        "orbital_period": 100,
+        "population": 1000000,
+        "rotation_period": 100,
+        "surface_water": 100,
+        "terrain": "terrain",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <InfoRow
+          label="Rotation period"
+          value={100}
+        />,
+        <InfoRow
+          label="Orbital period"
+          value={100}
+        />,
+        <InfoRow
+          label="Diameter"
+          value={100}
+        />,
+        <InfoRow
+          label="Surface water"
+          value={100}
+        />,
+        <InfoRow
+          label="Population"
+          value={1000000}
+        />,
+        <InfoRow
+          label="Gravity"
+          value="gravity"
+        />,
+        <InfoRow
+          label="Climate"
+          value="climate"
+        />,
+        <InfoRow
+          label="terrain"
+          value="terrain"
+        />,
+      ],
+      "className": "planet-basic-info",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "Rotation period",
+        "nodeType": "function",
+        "props": Object {
+          "label": "Rotation period",
+          "value": 100,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "Orbital period",
+        "nodeType": "function",
+        "props": Object {
+          "label": "Orbital period",
+          "value": 100,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "Diameter",
+        "nodeType": "function",
+        "props": Object {
+          "label": "Diameter",
+          "value": 100,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "Surface water",
+        "nodeType": "function",
+        "props": Object {
+          "label": "Surface water",
+          "value": 100,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "Population",
+        "nodeType": "function",
+        "props": Object {
+          "label": "Population",
+          "value": 1000000,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "Gravity",
+        "nodeType": "function",
+        "props": Object {
+          "label": "Gravity",
+          "value": "gravity",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "Climate",
+        "nodeType": "function",
+        "props": Object {
+          "label": "Climate",
+          "value": "climate",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "terrain",
+        "nodeType": "function",
+        "props": Object {
+          "label": "terrain",
+          "value": "terrain",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <InfoRow
+            label="Rotation period"
+            value={100}
+          />,
+          <InfoRow
+            label="Orbital period"
+            value={100}
+          />,
+          <InfoRow
+            label="Diameter"
+            value={100}
+          />,
+          <InfoRow
+            label="Surface water"
+            value={100}
+          />,
+          <InfoRow
+            label="Population"
+            value={1000000}
+          />,
+          <InfoRow
+            label="Gravity"
+            value="gravity"
+          />,
+          <InfoRow
+            label="Climate"
+            value="climate"
+          />,
+          <InfoRow
+            label="terrain"
+            value="terrain"
+          />,
+        ],
+        "className": "planet-basic-info",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "Rotation period",
+          "nodeType": "function",
+          "props": Object {
+            "label": "Rotation period",
+            "value": 100,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "Orbital period",
+          "nodeType": "function",
+          "props": Object {
+            "label": "Orbital period",
+            "value": 100,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "Diameter",
+          "nodeType": "function",
+          "props": Object {
+            "label": "Diameter",
+            "value": 100,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "Surface water",
+          "nodeType": "function",
+          "props": Object {
+            "label": "Surface water",
+            "value": 100,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "Population",
+          "nodeType": "function",
+          "props": Object {
+            "label": "Population",
+            "value": 1000000,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "Gravity",
+          "nodeType": "function",
+          "props": Object {
+            "label": "Gravity",
+            "value": "gravity",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "Climate",
+          "nodeType": "function",
+          "props": Object {
+            "label": "Climate",
+            "value": "climate",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "terrain",
+          "nodeType": "function",
+          "props": Object {
+            "label": "terrain",
+            "value": "terrain",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
