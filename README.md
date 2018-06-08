@@ -5,25 +5,28 @@
 
 ### [ Project deployment ]
 
-    $ docker-compose build
-    $ docker-compose up -d
-    $ docker exec -it swowow bash
+```
+docker-compose build
+docker-compose up -d
+docker exec -it swowow bash
+```
 
-### [ Run tests ]
+### [ Unit tests ]
 
 ```
 npm test
 npm run test:watch
+npm run test:updateSnapshot
+npm run test:coverage
 ```
 
 ### [ Start development environment ]
 
 ```
-npm run dev
+npm start
 
-Project url:                                localhost:8666
-webpack-bundle-analyzer interface url:      localhost:6868
-webpack-dev-server url:                     localhost:6686
+webpack-bundle-analyzer interface:      localhost:6868
+webpack-dev-server:                     localhost:6686
 ```
 
 ### [ Versionning project ]
@@ -39,8 +42,3 @@ npm run version-patch
 ```
 npm run build
 ```
-
-### [ Run node server for production ]
-
-```
-npm start

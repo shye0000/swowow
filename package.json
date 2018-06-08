@@ -12,14 +12,13 @@
     "test:watch": "npm test -- --watch",
     "test:updateSnapshot": "npm test -- --updateSnapshot",
     "test:coverage": "npm test -- --coverage",
-    "start": "cross-env NODE_ENV=production babel-node src/server.js",
     "build": "cross-env NODE_ENV=production webpack -p --profile --optimize-minimize",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "version-major": "npm version major -m \"Upgrade to %s\"",
     "version-minor": "npm version minor -m \"Upgrade to %s\"",
     "version-patch": "npm version patch -m \"Upgrade to %s\"",
-    "dev": "concurrently --kill-others \"nodemon src/server.js --exec babel-node\" \"webpack-dev-server\""
+    "start": "webpack-dev-server"
   },
   "jest": {
     "setupFiles": [

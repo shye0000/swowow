@@ -6,7 +6,6 @@ services:
     volumes:
       - ./:/app:rw
     ports:
-      - "8666:8666"
       - "6866:6866"
       - "6686:6686"
     tty: true

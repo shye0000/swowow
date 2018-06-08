@@ -14,7 +14,7 @@
     text-align: center;
     width: 100%;
     padding: $sm-padding $lg-padding;
-    max-width: 800px;
+    max-width: 810px;
   }
   .resources-buttons {
     margin-top: 30px;
@@ -22,6 +22,7 @@
     button, a {
       text-transform: uppercase;
       font-weight: bold;
+      margin: 5px;
     }
   }
 }

@@ -21,7 +21,7 @@ let jsFileName, cssFileName, devToolSourceMap, publicPath,
 if (isDeveloping) {
 	//configuration for development
 	styleLoaderConfig = [ 'style-loader', 'css-loader?sourceMap', 'postcss-loader?sourceMap', 'sass-loader?sourceMap' ];
-	publicPath = 'http://' + webpackDevServerHost + ':' + webpackDevServerPort + '/build/';
+	publicPath = 'http://' + webpackDevServerHost + ':' + webpackDevServerPort + '/';
 	jsFileName = 'js/[name].js';
 	cssFileName = 'css/[name].css';
 	devToolSourceMap = 'cheap-module-source-map';
