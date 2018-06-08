@@ -18,7 +18,7 @@ branches:
 deploy:
   provider: pages
   skip_cleanup: true
-  github-token: 62f61e5f6c652786ae8308858bdf9e382d573794
+  github-token: $GITHUB_TOKEN
   local_dir: build
   email: shye0000@gmail.com
   on:
