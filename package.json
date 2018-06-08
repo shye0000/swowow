@@ -6,6 +6,7 @@
     "defaults",
     "last 10 versions"
   ],
+  "repository": "https://github.com/shye0000/swowow",
   "homepage": "https://github.com/shye0000/swowow",
   "scripts": {
     "test": "jest --colors",
