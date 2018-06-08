@@ -25,8 +25,8 @@ npm run test:coverage
 ```
 npm start
 
-webpack-bundle-analyzer interface:      localhost:6868
-webpack-dev-server:                     localhost:6686
+webpack-bundle-analyzer:      localhost:6868
+webpack-dev-server:           localhost:6686
 ```
 
 ### [ Versionning project ]
