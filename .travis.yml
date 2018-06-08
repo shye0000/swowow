@@ -6,17 +6,10 @@ install:
 before_script:
 - npm test
 script:
-- npm run build
+- npm run deploy
 branches:
   only:
   - master
-deploy:
-  provider: pages
-  skip_cleanup: true
-  local_dir: build
-  email: shye0000@gmail.com
-  on:
-    branch: master
 env:
   global:
     secure: 1vkQPO0YrKpqVIjKVdUd3imIjW6EOmfkSMrBuDWqFYQV+pzjBWubIY9gMViE0f+i66rPbhtqo4qHGz5W1vJBSP4en3N08+lS9o0TIimJjx8vWBWRYvgQ8iuc0/fUX/duXp3XCjVN4fHcx++7hALjFZVI3ka3yFwlo6qTrc3BWfwuOq0/tFcNsuWoszxt/Qc/Ln0KX4ZMtCNAhEouwxAR4+IMr8QjHZSv+UTY9f5+OvCiHN2i/Rky0kD59DNrO2WcUOHohZ5lOMWSGaXHx3UtS0XgGEz0nkgrq/T9ITUuReHCuW9Tcmdzw10auiM7EK/98wNwG1gzlPSKKjOLuGRpPVYJU7PZ9e4AOSmqftRV7QcchWmziBOk/wwvC53Wf2gpVVkArk7NTexfVqVJ/9ymkCaglwo2edsOfILFtPI4QzDf0WvZsfQpb3kDrjCjxq+5ndb2oShcko4Gl69zDdnq9lv03nY8XAj9X5tXRt8cemWyfzl/99o2sz95Ls8LSNH1jIfj4FDGgt5Nn4IzPqK2mqyhB6I/IaFZEyxmL79VNjuoDDU396W+YINPKBqDF91Ht1HSw3QK758sWuA7BTCH8kojZFF/BIfBfpDBYk3oRVKBMdkPcb7b+88epf3fwaNeSY0XqMp/tmHC+Tx16WVQ+Ipjzo1DldFEFVHpEl8AiTY=
