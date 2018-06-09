@@ -80,9 +80,23 @@ ShallowWrapper {
           }
           prefixCls="ant-table"
           rowKey="key"
+          scroll={
+            Object {
+              "x": 600,
+            }
+          }
           showHeader={true}
           size="large"
           useFixedHeader={false}
+        />,
+        <ResizeDetector
+          handleHeight={false}
+          handleWidth={true}
+          onResize={[Function]}
+          refreshMode={undefined}
+          refreshRate={1000}
+          resizableElementId=""
+          skipOnMount={false}
         />,
       ],
       "className": "planets-table",
@@ -155,9 +169,29 @@ ShallowWrapper {
           },
           "prefixCls": "ant-table",
           "rowKey": "key",
+          "scroll": Object {
+            "x": 600,
+          },
           "showHeader": true,
           "size": "large",
           "useFixedHeader": false,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "handleHeight": false,
+          "handleWidth": true,
+          "onResize": [Function],
+          "refreshMode": undefined,
+          "refreshRate": 1000,
+          "resizableElementId": "",
+          "skipOnMount": false,
         },
         "ref": null,
         "rendered": null,
@@ -224,9 +258,23 @@ ShallowWrapper {
             }
             prefixCls="ant-table"
             rowKey="key"
+            scroll={
+              Object {
+                "x": 600,
+              }
+            }
             showHeader={true}
             size="large"
             useFixedHeader={false}
+          />,
+          <ResizeDetector
+            handleHeight={false}
+            handleWidth={true}
+            onResize={[Function]}
+            refreshMode={undefined}
+            refreshRate={1000}
+            resizableElementId=""
+            skipOnMount={false}
           />,
         ],
         "className": "planets-table",
@@ -299,9 +347,29 @@ ShallowWrapper {
             },
             "prefixCls": "ant-table",
             "rowKey": "key",
+            "scroll": Object {
+              "x": 600,
+            },
             "showHeader": true,
             "size": "large",
             "useFixedHeader": false,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "handleHeight": false,
+            "handleWidth": true,
+            "onResize": [Function],
+            "refreshMode": undefined,
+            "refreshRate": 1000,
+            "resizableElementId": "",
+            "skipOnMount": false,
           },
           "ref": null,
           "rendered": null,
