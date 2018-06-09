@@ -5,9 +5,13 @@ import HomeLink from '../../../components/HomeLink';
 import {fetchPlanets, setCurrentPlanet} from '../redux/actions';
 import { slowDown, speedUp } from '../../../redux/actions';
 import Table from 'antd/lib/table';
+import ReactResizeDetector from 'react-resize-detector';
 import './PlanetsTable.scss';
 
 export class PlanetsTable extends React.Component {
+
+
+	state ={ width: null }
 
 	componentDidMount = () => {
 		this.props.fetchPlanets();
@@ -69,9 +73,13 @@ export class PlanetsTable extends React.Component {
 			this.props.fetchPlanets(pagination.current);
 		}
 	}
+	resize = (width) => {
+		this.setState({width});
+	}
 
 	render () {
 		const {fetching, planetsCollection} = this.props;
+		const {width} = this.state;
 		let dataSource, tablePagination;
 		if (planetsCollection) {
 			const {results, count} = planetsCollection;
@@ -82,10 +90,11 @@ export class PlanetsTable extends React.Component {
 			<HomeLink />
 			<div className="table-name">STAR WARS PLANETS</div>
 			<Table
-				className="table-body" loading={fetching}
+				className="table-body" loading={fetching} scroll={{x: width < 600 ? 600 : undefined}}
 				columns={this.columns} pagination={tablePagination} dataSource={dataSource}
 				onChange={(pagination) => this.handleTableOnChange(pagination)}
 			/>
+			<ReactResizeDetector handleWidth onResize={(width) => this.resize(width)} />
 		</div>;
 	}
 }
