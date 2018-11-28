@@ -20,12 +20,14 @@ const rootFetching = () => {
 		type: ROOT_FETCHING
 	};
 };
+
 const rootFetchSuccess = (root) => {
 	return {
 		type: ROOT_FETCH_SUCCESS,
 		root
 	};
 };
+
 const rootFetchFail = () => {
 	return {
 		type: ROOT_FETCH_FAIL
