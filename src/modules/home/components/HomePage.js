@@ -1,87 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {fetchRoot} from '../redux/actions';
 import {connect} from 'react-redux';
 import {speedUp} from '../../../redux/actions';
 import ResourcesButtons from './ResourcesButtons';
 import Animate from 'rc-animate';
+import Msg from './Msg';
 import './HomePage.scss';
 
-const Msg = ({fetching, fetchSuccess, counter}) => {
 
-	if (fetching) {
-		return <Animate
-			transitionName="fade"
-			transitionAppear
-		>
-			<div>Here we go!</div>
-		</Animate>;
-	}
-	if (fetchSuccess) {
-		return <Animate
-			transitionName="fade"
-			transitionAppear
-		>
-			<div>STAR WARS</div>
-		</Animate>;
-	}
-	if (counter) {
-		return null;
-	}
-	return <Animate
-		transitionName="fade"
-		transitionAppear
-	>
-		<div>Bad luck, something went wrong...</div>
-	</Animate>;
-};
 
-export class HomePage extends React.Component {
+const HomePage = props => {
+	const [counter, setCounter] = useState(5);
+	const {fetching, fetchSuccess, root, fetchRoot} = props;
 
-	state = {
-		counter: 5
-	}
-
-	countDownToFetchRoot = () => {
-		const count = setInterval(() => {
-			this.setState((oldState) => {
-				const {counter} = oldState;
-				return {counter: counter - 1};
-			}, () => {
-				const {counter} = this.state;
-				if (counter === 0) {
-					this.props.fetchRoot();
-					clearInterval(count);
-				}
-			});
-		}, 1000);
-	}
-
-	componentDidMount = () => {
-		const {root, fetchSuccess} = this.props;
-		if (!root || !fetchSuccess) {
-			this.countDownToFetchRoot();
+	const countDownToFetchRoot = () => {
+		if (counter === 0) {
+			fetchRoot();
 		}
-	}
+		else {
+			setTimeout(() => setCounter(counter - 1), 1000);
+		}
+	};
 
-	render() {
-		const {counter} = this.state;
-		const {fetching, fetchSuccess, root} = this.props;
-		return (
-			<div className="home">
-				{!fetchSuccess && counter ? <div className="home-counter">{counter}</div> : null}
-				<div className="home-msg">
-					<Msg fetching={fetching} fetchSuccess={fetchSuccess} counter={counter} />
-					<Animate
-						transitionName="fade"
-						transitionAppear
-					>
-						{fetchSuccess ? <ResourcesButtons root={root} /> : null}
-					</Animate>
-				</div>
+	useEffect(() => {
+		if (!root || !fetchSuccess) {
+			countDownToFetchRoot();
+		}
+	});
+
+	return (
+		<div className="home">
+			{!fetchSuccess && counter ? <div className="home-counter">{counter}</div> : null}
+			<div className="home-msg">
+				<Msg fetching={fetching} fetchSuccess={fetchSuccess} counter={counter} />
+				<Animate
+					transitionName="fade"
+					transitionAppear
+				>
+					{fetchSuccess ? <ResourcesButtons root={root} /> : null}
+				</Animate>
 			</div>
-		);
-	}
-}
+		</div>
+	);
+};
 
 const mapStateToProps = (state) => {
 	return {

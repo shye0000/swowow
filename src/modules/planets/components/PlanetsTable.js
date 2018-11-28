@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import HomeLink from '../../../components/HomeLink';
@@ -8,110 +8,104 @@ import Table from 'antd/lib/table';
 import ReactResizeDetector from 'react-resize-detector';
 import './PlanetsTable.scss';
 
-export class PlanetsTable extends React.Component {
+const columns = [{
+	title: 'Name',
+	dataIndex: 'name',
+	key: 'name',
+	width: 100,
+	render(text, record){
+		const planetUrl = encodeURIComponent(record.url);
+		return <Link
+			to={`/planets/${planetUrl}`}
+			onClick={() => setCurrentPlanet(record)}
+		>{text}</Link>;
+	},
+}, {
+	title: 'Diameter',
+	dataIndex: 'diameter',
+	key: 'diameter',
+	width: 100,
+}, {
+	title: 'Climate',
+	dataIndex: 'climate',
+	key: 'climate',
+	width: 200,
+}, {
+	title: 'Population',
+	dataIndex: 'population',
+	key: 'population',
+	width: 200
+}];
 
-
-	state ={ width: null }
-
-	componentDidMount = () => {
-		this.props.fetchPlanets();
+const addKeyToDataSource = (dataSource) => {
+	if (!dataSource || !dataSource.length) {
+		return undefined;
 	}
+	return dataSource.map(record => ({
+		...record,
+		key: record.url,
+	}));
+};
 
-	pagination = {
-		current: 1
-	}
+const PlanetsTable = props => {
+	const [width, setWidth] = useState(null);
 
-	columns = [{
-		title: 'Name',
-		dataIndex: 'name',
-		key: 'name',
-		width: 100,
-		render: (text, record) => {
-			const planetUrl = encodeURIComponent(record.url);
-			return <Link
-				to={`/planets/${planetUrl}`}
-				onClick={() => this.props.setCurrentPlanet(record)}
-			>{text}</Link>;
+	const {
+		fetchPlanets,
+		fetching,
+		planetsCollection,
+		currentPage,
+	} = props;
+
+	useEffect(() => {
+		if (!fetching && !planetsCollection) {
+			fetchPlanets();
 		}
-	}, {
-		title: 'Diameter',
-		dataIndex: 'diameter',
-		key: 'diameter',
-		width: 100,
-	}, {
-		title: 'Climate',
-		dataIndex: 'climate',
-		key: 'climate',
-		width: 200,
-	}, {
-		title: 'Population',
-		dataIndex: 'population',
-		key: 'population',
-		width: 200
-	}];
+	});
 
-	addKeyToDataSource = (dataSource) => {
-		if (!dataSource || !dataSource.length) {
-			return undefined;
+	const handleTableOnChange = (pag) => {
+		if (pag.current !== currentPage) {
+			fetchPlanets(pag.current);
 		}
-		return dataSource.map(record => ({
-			...record,
-			key: record.url,
-		}));
-	}
+	};
 
-	getTablePaginationByCount = (count) => {
-		return {
-			...this.pagination,
-			total: count
+	let dataSource, tablePagination;
+	if (planetsCollection) {
+		const {results, count} = planetsCollection;
+		dataSource = addKeyToDataSource(results);
+		tablePagination = {
+			current: currentPage,
+			total: count,
 		};
 	}
 
-	handleTableOnChange = (pagination) => {
-		if (pagination.current !== this.pagination.current) {
-			this.pagination.current = pagination.current;
-			this.props.fetchPlanets(pagination.current);
-		}
-	}
-	resize = (width) => {
-		this.setState({width});
-	}
-
-	render () {
-		const {fetching, planetsCollection} = this.props;
-		const {width} = this.state;
-		let dataSource, tablePagination;
-		if (planetsCollection) {
-			const {results, count} = planetsCollection;
-			dataSource = this.addKeyToDataSource(results);
-			tablePagination = this.getTablePaginationByCount(count);
-		}
-		return <div className="planets-table">
-			<HomeLink />
-			<div className="table-name">STAR WARS PLANETS</div>
-			<Table
-				className="table-body" loading={fetching} scroll={{x: width < 600 ? 600 : undefined}}
-				columns={this.columns} pagination={tablePagination} dataSource={dataSource}
-				onChange={(pagination) => this.handleTableOnChange(pagination)}
-			/>
-			<ReactResizeDetector handleWidth onResize={(width) => this.resize(width)} />
-		</div>;
-	}
-}
+	return <div className="planets-table">
+		<HomeLink />
+		<div className="table-name">STAR WARS PLANETS</div>
+		<Table
+			className="table-body"
+			scroll={{x: width < 600 ? 600 : undefined}}
+			loading={fetching}
+			columns={columns}
+			pagination={tablePagination}
+			dataSource={dataSource}
+			onChange={(pag) => handleTableOnChange(pag)}
+		/>
+		<ReactResizeDetector handleWidth onResize={(width) => setWidth(width)} />
+	</div>;
+};
 
 const mapStateToProps = (state) => {
 	return {
 		fetching: state.planets.fetching,
 		fetchSuccess: state.planets.fetchSuccess,
-		planetsCollection: state.planets.planetsCollection
+		planetsCollection: state.planets.planetsCollection,
+		currentPage: state.planets.currentPage,
 	};
 };
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		setCurrentPlanet: (planet) => {
-			dispatch(setCurrentPlanet(planet));
-		},
 		fetchPlanets: (page) => {
 			dispatch(speedUp());
 			dispatch(fetchPlanets(page)).then(() => dispatch(slowDown())).catch(() => dispatch(slowDown()));

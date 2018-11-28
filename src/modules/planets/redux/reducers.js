@@ -8,6 +8,7 @@ import {
 const initialState = {
 	fetching: false,
 	fetchSuccess: false,
+	currentPage: 1,
 	planetsCollection: null,
 	currentPlanet: null,
 };
@@ -21,11 +22,13 @@ const reducers = (state = initialState, action) => {
 			};
 		}
 		case PLANETS_FETCH_SUCCESS: {
+			const {currentPage, planetsCollection} = action;
 			return {
 				...state,
 				fetching: false,
 				fetchSuccess: true,
-				planetsCollection: action.planetsCollection
+				planetsCollection,
+				currentPage,
 			};
 		}
 		case PLANETS_FETCH_FAIL: {

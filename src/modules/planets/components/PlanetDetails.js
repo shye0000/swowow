@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './PlanetDetails.scss';
 import {slowDown, speedUp} from '../../../redux/actions';
 import {fetchPlanet} from '../redux/actions';
@@ -12,11 +12,17 @@ import PlanetBasicInfo from './PlanetBasicInfo';
 import {connect} from 'react-redux';
 import Animate from 'rc-animate';
 
-export class PlanetDetails extends React.Component {
+const PlanetDetails = props => {
+	const {
+		currentPlanet,
+		fetching,
+		fetchSuccess,
+		match,
+		fetchPlanet,
+	} = props;
 
-	componentDidMount = () => {
-		const {planetUrl} = this.props.match.params;
-		const {currentPlanet, fetchPlanet} = this.props;
+	useEffect(() => {
+		const {planetUrl} = match.params;
 		const url = decodeURIComponent(planetUrl);
 		let currentPlanetUrl;
 		if (currentPlanet) {
@@ -25,49 +31,46 @@ export class PlanetDetails extends React.Component {
 		if (currentPlanetUrl !== url) {
 			fetchPlanet(url);
 		}
-	}
+	});
 
-	render () {
-		const {currentPlanet, fetching, fetchSuccess} = this.props;
-		let content;
-		if (fetching) {
-			content = null;
-		} else if (!fetchSuccess){
-			content = <div className="error" >Bad luck, something went wrong...</div>;
-		} else if (currentPlanet){
-			const {diameter, name} = currentPlanet;
-			content = <Animate
-				transitionName="fade"
-				transitionAppear
-			>
-				<div className="details-body">
-					<div className="sphere-wrapper">
-						<Sphere className="planet-sphere" diameter={diameter} />
-					</div>
-					<div className="planet-name">{name}</div>
-					<Row gutter={24} type="flex">
-						<Col xs={24} md={8}>
-							<Card className="info-card" title="Information">
-								<PlanetBasicInfo planet={currentPlanet}/>
-							</Card>
-						</Col>
-						<Col xs={24} md={8}>
-							<Card loading={true} className="info-card" title="Residents" />
-						</Col>
-						<Col xs={24} md={8}>
-							<Card loading={true} className="info-card" title="Films" />
-						</Col>
-					</Row>
+	let content;
+	if (fetching) {
+		content = null;
+	} else if (!fetchSuccess){
+		content = <div className="error" >Bad luck, something went wrong...</div>;
+	} else if (currentPlanet){
+		const {diameter, name} = currentPlanet;
+		content = <Animate
+			transitionName="fade"
+			transitionAppear
+		>
+			<div className="details-body">
+				<div className="sphere-wrapper">
+					<Sphere className="planet-sphere" diameter={diameter} />
 				</div>
-			</Animate>;
-		}
-		return <div className="planet-details">
-			<div><HomeLink /></div>
-			<div><PlanetsTableLink /></div>
-			{content}
-		</div>;
+				<div className="planet-name">{name}</div>
+				<Row gutter={24} type="flex">
+					<Col xs={24} md={8}>
+						<Card className="info-card" title="Information">
+							<PlanetBasicInfo planet={currentPlanet}/>
+						</Card>
+					</Col>
+					<Col xs={24} md={8}>
+						<Card loading={true} className="info-card" title="Residents" />
+					</Col>
+					<Col xs={24} md={8}>
+						<Card loading={true} className="info-card" title="Films" />
+					</Col>
+				</Row>
+			</div>
+		</Animate>;
 	}
-}
+	return <div className="planet-details">
+		<div><HomeLink /></div>
+		<div><PlanetsTableLink /></div>
+		{content}
+	</div>;
+};
 
 const mapStateToProps = (state) => {
 	return {

@@ -14,7 +14,9 @@ export const fetchPlanets = (page = 1) => {
 		const url = queryString ? `${PLANET_BASE_URL}?${queryString}` : queryString;
 		return fetch(url)
 			.then(resp => resp.json())
-			.then(planetsCollection => dispatch(planetsFetchSuccess(planetsCollection)))
+			.then(planetsCollection => dispatch(
+				planetsFetchSuccess(planetsCollection, page)
+			))
 			.catch(error => {
 				dispatch(planetsFetchFail());
 				throw(error);
@@ -50,10 +52,11 @@ const planetsFetching = () => {
 	};
 };
 
-const planetsFetchSuccess = (planetsCollection) => {
+const planetsFetchSuccess = (planetsCollection, currentPage) => {
 	return {
 		type: PLANETS_FETCH_SUCCESS,
-		planetsCollection
+		planetsCollection,
+		currentPage,
 	};
 };
 
