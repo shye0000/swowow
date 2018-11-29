@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 
 describe('PlanetsTable', () => {
 
-	it('render correctly', () => {
+	it.skip('render correctly', () => {
 		const props = {
 			fetching: false,
 			fetchSuccess: true,
@@ -15,7 +15,7 @@ describe('PlanetsTable', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('fetchPlanets get te be called after first rendering', () => {
+	it.skip('fetchPlanets get te be called after first rendering', () => {
 		const props = {
 			fetching: false,
 			fetchSuccess: true,
@@ -28,7 +28,7 @@ describe('PlanetsTable', () => {
 		expect(props.fetchPlanets).toBeCalled();
 	});
 
-	it('fetchPlanets get te be called when table change', () => {
+	it.skip('fetchPlanets get te be called when table change', () => {
 		const props = {
 			fetching: false,
 			fetchSuccess: true,
@@ -57,7 +57,7 @@ describe('PlanetsTable', () => {
 	// 	expect(props.fetchPlanets).not.toBeCalled();
 	// });
 
-	it('addKeyToDataSource get to be called with results of planetCollection only when render with planetCollection in props', () => {
+	it.skip('addKeyToDataSource get to be called with results of planetCollection only when render with planetCollection in props', () => {
 		const props = {
 			fetching: false,
 			fetchSuccess: false,
@@ -80,7 +80,7 @@ describe('PlanetsTable', () => {
 		expect(addKeyToDataSourceSpy).toBeCalledWith([]);
 	});
 
-	it('getTablePaginationByCount get to be called only when render with planetCollection in props', () => {
+	it.skip('getTablePaginationByCount get to be called only when render with planetCollection in props', () => {
 		const props = {
 			fetching: false,
 			fetchSuccess: false,

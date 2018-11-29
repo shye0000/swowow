@@ -20,6 +20,8 @@ describe('fetch root action', () => {
 
 	it('creates PLANETS_FETCH_SUCCESS when fetching planets has been done', () => {
 
+		const expectedCurrentPage = 1;
+
 		const expectedPlanetsCollection = {
 			count: 61,
 			next: 'https://swapi.co/api/planets/?page=2',
@@ -29,11 +31,15 @@ describe('fetch root action', () => {
 
 		const expectedActions = [
 			{ type: PLANETS_FETCHING },
-			{ type: PLANETS_FETCH_SUCCESS, planetsCollection: expectedPlanetsCollection }
+			{
+				type: PLANETS_FETCH_SUCCESS,
+				planetsCollection: expectedPlanetsCollection,
+				currentPage: expectedCurrentPage,
+			}
 		];
 		const store = mockStore({ planets: [] });
 
-		fetchMock.getOnce(`${PLANET_BASE_URL}?page=1`, {
+		fetchMock.getOnce(`${PLANET_BASE_URL}?page=${expectedCurrentPage}`, {
 			body: expectedPlanetsCollection,
 			headers: { 'content-type': 'application/json' }
 		});

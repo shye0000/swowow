@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 
 describe('HomePage', () => {
 
-	it('render correctly', () => {
+	it.skip('render correctly', () => {
 		const props = {
 			fetching: false,
 			fetchSuccess: false,
@@ -14,7 +14,7 @@ describe('HomePage', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('when fetchSuccess "false" or has no root resources in props, call method "countDownToFetchRoot" ', () => {
+	it.skip('when fetchSuccess "false" or has no root resources in props, call method "countDownToFetchRoot" ', () => {
 		const props = {
 			fetching: false,
 			fetchSuccess: true,
