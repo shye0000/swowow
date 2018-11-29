@@ -7,9 +7,7 @@ import Animate from 'rc-animate';
 import Msg from './Msg';
 import './HomePage.scss';
 
-
-
-const HomePage = props => {
+export const HomePage = props => {
 	const [counter, setCounter] = useState(5);
 	const {fetching, fetchSuccess, root, fetchRoot} = props;
 
