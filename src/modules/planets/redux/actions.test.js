@@ -24,7 +24,7 @@ describe('fetch root action', () => {
 
 		const expectedPlanetsCollection = {
 			count: 61,
-			next: 'https://swapi.co/api/planets/?page=2',
+			next: 'https://www.swapi.tech/api/planets/?page=2',
 			previous: null,
 			results:[]
 		};
@@ -53,7 +53,7 @@ describe('fetch root action', () => {
 
 		const expectedPlanetsCollection = {
 			count: 61,
-			next: 'https://swapi.co/api/planets/?page=2',
+			next: 'https://www.swapi.tech/api/planets/?page=2',
 			previous: null,
 			results:[]
 		};

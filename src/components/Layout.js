@@ -26,7 +26,7 @@ class Layout extends React.Component {
 				</div>
 				<div className="swapi-link-wrapper">
 					<span>{'Powered by '}</span>
-					<span><a href="https://swapi.co/" target="_blank" rel="noopener noreferrer" >SWAPI</a></span>
+					<span><a href="https://www.swapi.tech/" target="_blank" rel="noopener noreferrer" >SWAPI</a></span>
 				</div>
 			</div>
 		);

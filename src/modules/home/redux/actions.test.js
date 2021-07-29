@@ -14,7 +14,7 @@ describe('fetch root action', () => {
 	});
 
 	it('creates ROOT_FETCH_SUCCESS when fetching root has been done', () => {
-		fetchMock.getOnce('https://swapi.co/api/', {
+		fetchMock.getOnce('https://www.swapi.tech/api/', {
 			body: {
 				'resource_1': 'url_1',
 				'resource_2': 'url_2',

@@ -5,9 +5,9 @@ export const ROOT_FETCH_FAIL = 'ROOT_FETCH_FAIL';
 export const fetchRoot = () => {
 	return (dispatch) => {
 		dispatch(rootFetching());
-		return fetch('https://swapi.co/api/')
+		return fetch('https://www.swapi.tech/api/')
 			.then(resp => resp.json())
-			.then((root) => dispatch(rootFetchSuccess(root)))
+			.then((root) => dispatch(rootFetchSuccess(root.result)))
 			.catch(error => {
 				dispatch(rootFetchFail());
 				throw(error);

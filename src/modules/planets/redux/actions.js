@@ -5,14 +5,14 @@ export const PLANETS_FETCH_SUCCESS = 'PLANETS_FETCH_SUCCESS';
 export const PLANETS_FETCH_FAIL = 'PLANETS_FETCH_FAIL';
 export const SET_CURRENT_PLANET = 'SET_CURRENT_PLANET';
 
-export const PLANET_BASE_URL = 'https://swapi.co/api/planets';
+export const PLANET_BASE_URL = 'https://www.swapi.tech/api/planets';
 
 export const fetchPlanets = (page = 1) => {
 	return (dispatch) => {
 		dispatch(planetsFetching());
 		const queryString = parseObjToQueryString({page});
 		const url = queryString ? `${PLANET_BASE_URL}?${queryString}` : queryString;
-		return fetch(url)
+		return fetch(`${url}&limit=10`)
 			.then(resp => resp.json())
 			.then(planetsCollection => dispatch(
 				planetsFetchSuccess(planetsCollection, page)
@@ -30,7 +30,7 @@ export const fetchPlanet = (url) => {
 			dispatch(planetsFetching());
 			return fetch(url)
 				.then(resp => resp.json())
-				.then(planet => dispatch(setCurrentPlanet(planet)))
+				.then(planet => dispatch(setCurrentPlanet(planet.result.properties)))
 				.catch(error => {
 					dispatch(planetsFetchFail());
 					throw(error);

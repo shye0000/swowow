@@ -71,11 +71,11 @@ const PlanetsTable = props => {
 
 	let dataSource, tablePagination;
 	if (planetsCollection) {
-		const {results, count} = planetsCollection;
+		const {results, total_records} = planetsCollection;
 		dataSource = addKeyToDataSource(results);
 		tablePagination = {
 			current: currentPage,
-			total: count,
+			total: total_records,
 		};
 	}
 
