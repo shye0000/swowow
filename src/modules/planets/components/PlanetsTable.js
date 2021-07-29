@@ -8,6 +8,7 @@ import Table from 'antd/lib/table';
 import ReactResizeDetector from 'react-resize-detector';
 import './PlanetsTable.scss';
 
+
 const columns = [{
 	title: 'Name',
 	dataIndex: 'name',
