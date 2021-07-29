@@ -121,7 +121,7 @@
     "svg-react-loader": "^0.4.5",
     "webpack": "^3.9.1",
     "webpack-auto-inject-version": "^1.0.0",
-    "webpack-bundle-analyzer": "^2.10.0",
+    "webpack-bundle-analyzer": "^3.3.2",
     "webpack-dev-server": "^2.11.1"
   },
   "dependencies": {
