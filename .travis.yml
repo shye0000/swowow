@@ -5,8 +5,8 @@ node_js:
 install:
   - npm install
 
-before_script:
-  - npm run test:coverage
+# before_script:
+#   - npm run test:coverage
 
 script:
   - npm run build
